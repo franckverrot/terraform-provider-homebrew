@@ -1,0 +1,3 @@
+variable "packages" {
+  type = "list"
+}

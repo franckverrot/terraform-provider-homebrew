@@ -1,0 +1,6 @@
+.terraform/
+pkg/
+terraform.tfstate*
+terraform.tfplan
+crash.log
+terraform-provider-homebrew
