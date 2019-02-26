@@ -3,8 +3,8 @@ provider "homebrew" {
   host = "127.0.0.1"
 }
 
-variable "developer_tools" {
-  default = [
+locals {
+  developer_tools = [
     { name = "zsh" },
     { name = "vim" },
     { name = "jq" },
@@ -13,5 +13,5 @@ variable "developer_tools" {
 
 module "development_packages" {
   source   = "modules/homebrew_package"
-  packages = ["${var.developer_tools}"]
+  packages = ["${local.developer_tools}"]
 }

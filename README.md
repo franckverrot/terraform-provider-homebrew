@@ -51,8 +51,8 @@ But you can also create a module out of it, like the one you can found in
 installation of more than one package!
 
 ```hcl
-variable "developer_tools" {
-  default = [
+locals {
+  developer_tools = [
     { name = "zsh" },
     { name = "vim" },
     { name = "jq" },
@@ -61,7 +61,7 @@ variable "developer_tools" {
 
 module "development_packages" {
   source   = "modules/homebrew_package"
-  packages = ["${var.developer_tools}"]
+  packages = ["${local.developer_tools}"]
 }
 ```
 
